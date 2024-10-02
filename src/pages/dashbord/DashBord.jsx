@@ -8,7 +8,7 @@ export const DashBord = () => {
             disableGutters // Removes padding for full-width effect
             maxWidth={false}
             sx={{
-                backgroundColor: '#9b1111',
+                backgroundColor: '#ffffff',
                 height: '100%',
                 width: '100%',
                 padding: 0,

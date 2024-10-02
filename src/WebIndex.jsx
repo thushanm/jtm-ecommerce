@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from '@mui/material';
 import { DashBord } from "./pages/dashbord/DashBord.jsx";
 import Navbar from "./component/navbar/Navbar.jsx";
+import {DashBordButtons} from "./component/dashbord/DashBordButtons.jsx";
 
 export const WebIndex = () => {
     return (
@@ -19,6 +20,7 @@ export const WebIndex = () => {
         >
             <Navbar />
             <DashBord />
+
 
         </Container>
     );
