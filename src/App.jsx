@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './App.css';
 
 import {Container} from "@mui/material";
 
@@ -10,7 +10,13 @@ import {WebIndex} from "./WebIndex.jsx";
 function App() {
     return (
 
-            <Container maxWidth="false" sx={{ backgroundColor: '#dfe8e7', height: '100vh', width:'100vw' }}>
+            <Container  disableGutters // Removes padding for full-width effect
+                        maxWidth={false}sx={{
+                maxWidth:'false',
+                backgroundColor: '#ffffff',
+               height: '100%',
+                width: '100%',}
+            } >
 
          <WebIndex/>
 

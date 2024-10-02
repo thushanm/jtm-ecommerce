@@ -1,13 +1,23 @@
 import React from 'react';
-import { Container } from '@mui/material';
-import { SwipePhoto} from "../../component/dashbord/SwipePhoto.jsx";
-
+import { Grid, Container } from '@mui/material';
+import { SwipePhoto } from "../../component/dashbord/SwipePhoto.jsx";
 
 export const DashBord = () => {
     return (
-        <Container maxWidth="false" sx={{ backgroundColor: '#dfe8e7', height: '10%',width:"100%"  }}>
-<SwipePhoto/>
-
+        <Container
+            disableGutters // Removes padding for full-width effect
+            maxWidth={false}
+            sx={{
+                backgroundColor: '#9b1111',
+                height: '100%',
+                width: '100%',
+                padding: 0,
+                margin: 0,
+            }}
+        >
+            <Grid container sx={{ height: '100%', position: 'relative' }}>
+                <SwipePhoto />
+            </Grid>
         </Container>
     );
 };

@@ -1,3 +1,4 @@
+// SwipePhoto.jsx
 import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -21,17 +22,49 @@ export const SwipePhoto = () => {
         autoplay: true,
         autoplaySpeed: 2000,
         pauseOnHover: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
     };
 
     return (
-        <Box sx={{ width: '80%', margin: 'auto' }}>
+        <Box
+            sx={{
+                width: {
+                    xs: '100%',
+                    sm: '90%',
+                    md: '80%',
+                },
+                margin: 'auto',
+            }}
+        >
             <Slider {...settings}>
                 {photos.map(photo => (
-                    <Box key={photo.id} sx={{ padding: 2 }}>
+                    <Box key={photo.id} sx={{ padding: { xs: 1, sm: 2 ,width:'100%'} }}>
                         <img
                             src={photo.src}
                             alt={photo.alt}
-                            style={{ width: '75%', borderRadius: '10px',display:"flex",alignSelf:"center",margin:"auto" }}
+                            style={{
+                                height:'90%',
+                                width: '100%',
+                                borderRadius: '10px',
+                                objectFit: 'cover',
+                                display: "block",
+                                margin: "0 auto",
+                            }}
                         />
                     </Box>
                 ))}
