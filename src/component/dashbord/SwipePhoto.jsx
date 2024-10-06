@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { DashBordButtons } from "./DashBordButtons.jsx";
 
 const photos = [
-    { id: 1, src: './public/assets/carosl_photo/photo_1.jpg', alt: 'Image 1' },
-    { id: 2, src: './public/assets/carosl_photo/photo_2.jpg', alt: 'Image 2' },
-    { id: 3, src: './public/assets/carosl_photo/photo_3.jpg', alt: 'Image 3' },
-    { id: 4, src: './public/assets/carosl_photo/photo_5.jpg', alt: 'Image 4' },
+    { id: 1, src: './public/assets/carosl_photo/photo1.jpg', alt: 'Image 1' },
+    { id: 2, src: './public/assets/carosl_photo/photo2.jpg', alt: 'Image 2' },
+    { id: 3, src: './public/assets/carosl_photo/photo3.jpg', alt: 'Image 3' },
+    { id: 4, src: './public/assets/carosl_photo/photo4.jpg', alt: 'Image 4' },
 ];
 
 export const SwipePhoto = () => {
+    const sliderRef = useRef(null); // Create a ref for the slider
+
     const settings = {
         dots: true,
         infinite: true,
@@ -21,7 +23,7 @@ export const SwipePhoto = () => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
-        pauseOnHover: true,
+        pauseOnHover: false,
         responsive: [
             {
                 breakpoint: 1024,
@@ -40,19 +42,28 @@ export const SwipePhoto = () => {
         ],
     };
 
+    const handleMouseEnter = () => {
+        if (sliderRef.current) {
+            sliderRef.current.slickPause(); // Pause the slider
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (sliderRef.current) {
+            sliderRef.current.slickPlay(); // Resume the slider
+        }
+    };
+
     return (
         <Box
             sx={{
-                width: {
-                    xs: '100%',
-                    sm: '90%',
-                    md: '80%',
-                },
+                width: '100%',
+                height: '100%',
                 margin: 'auto',
                 position: 'relative',
             }}
         >
-            <Slider {...settings}>
+            <Slider {...settings} ref={sliderRef}>
                 {photos.map(photo => (
                     <Box key={photo.id} sx={{ position: 'relative', padding: { xs: 1, sm: 2 }, width: '100%' }}>
                         <img
@@ -68,7 +79,6 @@ export const SwipePhoto = () => {
                             }}
                         />
 
-
                         <Box
                             sx={{
                                 position: 'absolute',
@@ -78,22 +88,18 @@ export const SwipePhoto = () => {
                                 textAlign: 'center',
                                 color: '#ffffff',
                                 zIndex: 1,
-                                width: '80%',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center',
                             }}
                         >
-
-                            <Typography
-                                variant="h3"
-                                component="div"
-                                sx={{ fontWeight: 'bold', mb: 2 }}
-                            >
-                                SOLVE BUSINESS <br />
-                                CHALLENGES WITH <br />
-                                TECHNOLOGY
-                            </Typography>
-
-
-                            <DashBordButtons buttonText="LET'S TALK" />
+                            <DashBordButtons
+                                sx={{ fontWeight: 'bold' }}
+                                buttonText="LET'S TALK"
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                            />
                         </Box>
                     </Box>
                 ))}
