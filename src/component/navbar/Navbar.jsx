@@ -5,9 +5,11 @@ import HomeIcon from '@mui/icons-material/Home';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import InfoIcon from '@mui/icons-material/Info';
 import BuildIcon from '@mui/icons-material/Build';
+import WorkIcon from '@mui/icons-material/Work';
 import { useTheme, useMediaQuery } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-// Custom styled components
+
 const NavbarContainer = styled(AppBar)(({ theme }) => ({
     backgroundColor: '#282c34',
     boxShadow: 'none',
@@ -24,8 +26,8 @@ const NavButton = styled(Button)(({ theme }) => ({
     padding: '10px 20px',
     transition: 'background-color 0.3s ease, border-radius 0.3s ease',
     '&:hover': {
-        backgroundColor: '#61dafb', // Background color on hover
-        borderRadius: '50px', // Rounded effect like the GIF
+        backgroundColor: '#61dafb',
+        borderRadius: '50px',
     },
     '&::before': {
         content: '""',
@@ -70,10 +72,11 @@ const Navbar = () => {
     };
 
     const menuItems = [
-        { text: 'Home', link: '/', icon: <HomeIcon /> },
+        { text: 'Home', to: '/', icon: <HomeIcon /> },
         { text: 'Service', subMenu: ['pdf Book', 'Web Developing', 'Software Developing'], icon: <BuildIcon /> },
-        { text: 'Contact Us', link: '/contactus', icon: <ContactMailIcon /> },
-        { text: 'About Us', link: '/aboutus', icon: <InfoIcon /> }
+        { text: 'Projects', to: '/projects', icon: <WorkIcon /> },  // New Projects section
+        { text: 'Contact Us', to: '/contactus', icon: <ContactMailIcon /> },
+        { text: 'About Us', to: '/aboutus', icon: <InfoIcon /> }
     ];
 
     return (
@@ -93,7 +96,7 @@ const Navbar = () => {
                                 <List>
                                     {menuItems.map((item, index) => (
                                         <React.Fragment key={index}>
-                                            <ListItem button>
+                                            <ListItem button component={Link} to={item.to}>
                                                 <ListItemIcon>{item.icon}</ListItemIcon>
                                                 <ListItemText primary={item.text} />
                                             </ListItem>
@@ -115,6 +118,8 @@ const Navbar = () => {
                                 key={index}
                                 color="inherit"
                                 startIcon={item.icon}
+                                component={Link}  // Link added to NavButton
+                                to={item.to}       // Navigation path
                                 onMouseEnter={item.subMenu ? handleClick : null}
                             >
                                 {item.text}
@@ -124,8 +129,8 @@ const Navbar = () => {
                             anchorEl={anchorEl}
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
-                            TransitionComponent={Grow}  // Adding the Grow transition for smooth rise/descend
-                            transitionDuration={300}   // Adjust the duration as needed
+                            TransitionComponent={Grow}
+                            transitionDuration={300}
                         >
                             <MenuItem onClick={handleClose}>pdf Book</MenuItem>
                             <MenuItem onClick={handleClose}>Web Developing</MenuItem>

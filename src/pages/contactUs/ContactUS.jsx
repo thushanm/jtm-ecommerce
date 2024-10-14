@@ -1,8 +1,8 @@
 import React from 'react';
-import { Grid, Container } from '@mui/material';
-import { SwipePhoto } from "../../component/dashbord/SwipePhoto.jsx";
+import {Container, Grid} from "@mui/material";
+import {MainForm} from "../../component/contactUs/MainForm.jsx";
 
-export const DashBord = () => {
+export const ContactUs = () => {
     return (
         <Container
             disableGutters // Removes padding for full-width effect
@@ -16,8 +16,9 @@ export const DashBord = () => {
             }}
         >
             <Grid container sx={{ height: '100%', position: 'relative' }}>
-                <SwipePhoto />
+                <MainForm/>
             </Grid>
         </Container>
     );
 };
+
