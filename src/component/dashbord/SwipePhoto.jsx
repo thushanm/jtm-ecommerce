@@ -6,10 +6,10 @@ import { Box } from '@mui/material';
 import { DashBordButtons } from "./DashBordButtons.jsx";
 
 const photos = [
-    { id: 1, src: './assets/carosl_photo/photo1.jpg', alt: 'Image 1' },
-    { id: 2, src: './assets/carosl_photo/photo2.jpg', alt: 'Image 2' },
-    { id: 3, src: './assets/carosl_photo/photo3.jpg', alt: 'Image 3' },
-    { id: 4, src: './assets/carosl_photo/photo4.jpg', alt: 'Image 4' },
+    { id: 1, src: ' ./assets/carosl_photo/photo1.jpg', alt: 'Image 1' },
+    { id: 2, src: ' ./assets/carosl_photo/photo2.jpg', alt: 'Image 2' },
+    { id: 3, src: ' ./assets/carosl_photo/photo3.jpg', alt: 'Image 3' },
+    { id: 4, src: ' ./assets/carosl_photo/photo4.jpg', alt: 'Image 4' },
 ];
 
 export const SwipePhoto = () => {
