@@ -3,7 +3,9 @@ import { Container } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './component/navbar/Navbar.jsx';
 import { DashBord } from './pages/dashbord/DashBord.jsx';
-import { ContactUs } from './pages/contactUs/ContactUS.jsx';
+import {Projects} from "./pages/project/Projects.jsx";
+import {DashBordServicees} from "./pages/services/DashBordServicees.jsx";
+
 
 export const WebIndex = () => {
     return (
@@ -22,7 +24,8 @@ export const WebIndex = () => {
 
 
                <DashBord />
-              <ContactUs/>
+            <DashBordServicees/>
+       <Projects/>
 
         </Container>
     );

@@ -1,8 +1,8 @@
 import React from 'react';
 import {Container, Grid} from "@mui/material";
-import {MainForm} from "../../component/contactUs/MainForm.jsx";
+import ProductGrid from "../../component/projects/ProductGrid.jsx";
 
-export const ContactUs = () => {
+export const Projects = () => {
     return (
         <Container
             disableGutters // Removes padding for full-width effect
@@ -16,7 +16,7 @@ export const ContactUs = () => {
             }}
         >
             <Grid container sx={{ height: '100%', position: 'relative' }}>
-                <MainForm/>
+               <ProductGrid/>
             </Grid>
         </Container>
     );
