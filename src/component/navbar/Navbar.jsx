@@ -83,7 +83,7 @@ const Navbar = () => {
         <NavbarContainer position="static">
             <Toolbar>
                 <Typography sx={{ flexGrow: 1 }}>
-                    <Logo src="public/assets/logo.jpg" alt="Logo" />
+                    <Logo src="./assets/logo.jpg" alt="Logo" />
                 </Typography>
 
                 {isMobile ? (
