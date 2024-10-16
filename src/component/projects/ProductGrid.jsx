@@ -33,12 +33,17 @@ const StyledCard = styled(Card)(({ theme }) => ({
 const ProductGrid = () => {
     return (
         <>
+            <Grid container justifyContent="center" sx={{ textAlign: 'center', paddingBottom: "2rem" }}>
             <Typography
-                variant="h2"
+                variant="h3"
                 align="center"
                 gutterBottom
-                fontWeight="bold"
-                sx={{ fontFamily: 'Open Sans, sans-serif' }}
+                sx={{
+                    fontFamily: 'Open Sans, sans-serif',
+                    fontWeight: 'bold',
+                    color: '#004ba0',
+                    marginBottom: '2rem',
+                }}
             >
                 Projects
             </Typography>
@@ -65,6 +70,7 @@ const ProductGrid = () => {
                         </StyledCard>
                     </Grid>
                 ))}
+            </Grid>
             </Grid>
         </>
     );

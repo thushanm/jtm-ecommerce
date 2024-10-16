@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container } from '@mui/material';
+import { Container, Box } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './component/navbar/Navbar.jsx';
 import { DashBord } from './pages/dashbord/DashBord.jsx';
-import {Projects} from "./pages/project/Projects.jsx";
-import {DashBordServicees} from "./pages/services/DashBordServicees.jsx";
-
+import { Projects } from "./pages/project/Projects.jsx";
+import { DashBordServicees } from "./pages/services/DashBordServicees.jsx";
+import {ContactMain} from "./pages/contactMain/ContactMain.jsx";
 
 export const WebIndex = () => {
     return (
@@ -22,11 +22,24 @@ export const WebIndex = () => {
         >
             <Navbar />
 
+            {/* Add spacing between components */}
+            <Box sx={{ marginBottom: 5 }}>
+                <DashBord />
+            </Box>
 
-               <DashBord />
-            <DashBordServicees/>
-       <Projects/>
+            <Box sx={{ marginBottom: 10 }}>
+                <DashBordServicees />
+            </Box>
 
+            <Box sx={{ marginBottom: 10 }}>
+                <Projects />
+            </Box>
+            <Box  sx={{
+
+                marginBottom: 10,
+            }}>
+                <ContactMain />
+            </Box>
         </Container>
     );
 };

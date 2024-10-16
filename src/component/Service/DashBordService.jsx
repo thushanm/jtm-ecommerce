@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Card, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
+import { Grid, Card, CardMedia, CardContent, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const products = [
@@ -20,7 +20,6 @@ const products = [
     }
 ];
 
-
 const StyledCard = styled(Card)(({ theme }) => ({
     transition: 'transform 0.3s ease-in-out',
     '&:hover': {
@@ -32,17 +31,23 @@ const StyledCard = styled(Card)(({ theme }) => ({
 
 const DashBordService = () => {
     return (
-        <>
-            <Typography
-                variant="h2"
-                align="center"
-                gutterBottom
-                fontWeight="bold"
-                sx={{ fontFamily: 'Open Sans, sans-serif' }} // Apply custom font here
-            >
-                Our Service
-            </Typography>
+        <Grid container justifyContent="center" sx={{ textAlign: 'center', paddingBottom: "2rem" }}>
+            <Grid item xs={12}>
+                <Typography
+                    variant="h3"
+                    gutterBottom
+                    sx={{
+                        fontFamily: 'Open Sans, sans-serif',
+                        fontWeight: "bold",
+                        color: "#004ba0",
+                        marginBottom: "2rem",
+                    }}
+                >
+                    Our Service
+                </Typography>
+            </Grid>
 
+            {/* Service Cards */}
             <Grid container spacing={3} justifyContent="center">
                 {products.map((product, index) => (
                     <Grid item xs={12} sm={6} md={4} key={index}>
@@ -66,7 +71,7 @@ const DashBordService = () => {
                     </Grid>
                 ))}
             </Grid>
-        </>
+        </Grid>
     );
 };
 
