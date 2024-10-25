@@ -7,6 +7,7 @@ import { Projects } from "./pages/project/Projects.jsx";
 import { DashBordServicees } from "./pages/services/DashBordServicees.jsx";
 import {ContactMain} from "./pages/contactMain/ContactMain.jsx";
 import {AboutBar} from "./pages/about/AboutBar.jsx";
+import Footers from "./footer/FooterPage.jsx";
 
 
 export const WebIndex = () => {
@@ -47,6 +48,12 @@ export const WebIndex = () => {
                 marginBottom: 10,
             }}>
                <AboutBar/>
+            </Box>
+            <Box  sx={{
+
+                marginBottom: 10,
+            }}>
+               <Footers/>
             </Box>
         </Container>
     );
