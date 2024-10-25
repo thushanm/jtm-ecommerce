@@ -6,6 +6,8 @@ import { DashBord } from './pages/dashbord/DashBord.jsx';
 import { Projects } from "./pages/project/Projects.jsx";
 import { DashBordServicees } from "./pages/services/DashBordServicees.jsx";
 import {ContactMain} from "./pages/contactMain/ContactMain.jsx";
+import {AboutBar} from "./pages/about/AboutBar.jsx";
+
 
 export const WebIndex = () => {
     return (
@@ -39,6 +41,12 @@ export const WebIndex = () => {
                 marginBottom: 10,
             }}>
                 <ContactMain />
+            </Box>
+            <Box  sx={{
+
+                marginBottom: 10,
+            }}>
+               <AboutBar/>
             </Box>
         </Container>
     );

@@ -9,8 +9,8 @@ const products = [
         img: './assets/services/web devoloping.gif'
     },
     {
-        title: 'E Book Buying',
-        description: 'You Can Now Mind Peace Ebook Buying',
+        title: 'E Book Selling',
+        description: 'You Can Now Mind Peace Ebook Selling',
         img: './assets/services/ebook.gif'
     },
     {

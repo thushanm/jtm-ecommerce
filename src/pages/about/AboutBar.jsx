@@ -1,9 +1,10 @@
 import React from 'react';
 import { Grid, Container } from '@mui/material';
-import Form from "../../component/contact us/form.jsx";
+import About from "../../component/aboutpage/About.jsx";
 
 
-export const ContactMain = () => {
+
+export const AboutBar = () => {
     return (
         <Container
             disableGutters // Removes padding for full-width effect
@@ -22,7 +23,7 @@ export const ContactMain = () => {
                 alignItems: 'center',
 
             }}>
-                <Form />
+           <About/>
             </Grid>
         </Container>
     );
